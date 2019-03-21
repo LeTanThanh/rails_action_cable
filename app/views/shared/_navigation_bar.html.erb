@@ -1,0 +1,47 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "RailsActionCable", root_path, class: "navbar-brand" %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <%= link_to "Home", "#" %>
+      </li>
+      <li>
+        <%= link_to "Page 1", "#" %>
+      </li>
+      <li>
+        <%= link_to "Page 2", "#" %>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "#" do %>
+            <span class="glyphicon glyphicon-user"></span>
+            <%= current_user.email %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+            Sign out
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to new_user_registration_path do %>
+            <span class="glyphicon glyphicon-user"></span>
+            Sign Up
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <span class="glyphicon glyphicon-log-in"></span>
+            Sign in
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
