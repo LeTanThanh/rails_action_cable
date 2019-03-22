@@ -13,7 +13,7 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        # Data received
+        messages.append data['message']
 
       send_message_to_server_channel: (message, chat_room_id) ->
         @perform 'receive_message_from_client', message: message, chat_room_id: chat_room_id
