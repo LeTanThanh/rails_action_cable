@@ -2,7 +2,8 @@
   <h2><%= @chat_room.title %></h2>
   <p>Join your favourite chat room or <%= link_to "Back to Chat Room List", chat_rooms_path %></p>
 
-  <div class="container-convertsation" id="js-container-messages" data-chat-room-id="<%= @chat_room.id %>">
+  <div class="container-convertsation" id="js-container-messages"
+    data-chat-room-id="<%= @chat_room.id %>" data-current-user-id="<%= current_user.id %>">
     <% @messages.each do |message| %>
       <%= render "chat_rooms/message", message: message %>
     <% end %>
