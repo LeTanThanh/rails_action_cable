@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Chat Room List</h1>
+  <p>Join your favourite chat room or <%= link_to "Create Chat Room", new_chat_room_path %></p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "chat_rooms/chat_room", collection: @chat_rooms %>
+    </tbody>
+  </table>
+</div>
