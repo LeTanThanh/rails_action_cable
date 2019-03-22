@@ -1,0 +1,5 @@
+<% if message.user == current_user %>
+  <%= render "chat_rooms/user_message", message: message, user: message.user %>
+<% else %>
+  <%= render "chat_rooms/other_user_message", message: message, user: message.user %>
+<% end %>

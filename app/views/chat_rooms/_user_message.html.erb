@@ -1,0 +1,6 @@
+<div class="container-message darker">
+  <%= image_tag user.decorate.avatar_url, class: "right user-avatar" %>
+  <p class="user-name"><%= user.name %></p>
+  <p><%= message.body %></p>
+  <span class="time-left"><%= message.decorate.format_created_at %></span>
+</div>

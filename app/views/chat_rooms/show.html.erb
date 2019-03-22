@@ -1,0 +1,20 @@
+<div class="container">
+  <h2><%= @chat_room.title %></h2>
+  <p>Join your favourite chat room or <%= link_to "Back to Chat Room List", chat_rooms_path %></p>
+
+  <div class="container-convertsation">
+    <% @message.each do |message| %>
+      <%= render "chat_rooms/message", message: message %>
+    <% end %>
+  </div>
+</div>
+
+<!-- <h1><%= @chat_room.title %></h1>
+
+<div id="messages">
+  <%= render partial: "chat_rooms/message", collection: @chat_room.messages %>
+</div> -->
+
+<style type="text/css">
+
+</style>
