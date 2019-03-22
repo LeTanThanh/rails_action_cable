@@ -9,6 +9,6 @@ class ChatRoomsChannel < ApplicationCable::Channel
   end
 
   def receive_message_from_client data
-    User.first.messages.create body: data["message"], chat_room_id: data["chat_room_id"]
+    action_cable_current_user.messages.create body: data["message"], chat_room_id: data["chat_room_id"]
   end
 end
